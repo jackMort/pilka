@@ -1,0 +1,6 @@
+*.pyc
+*.swp
+ve
+virtualenv.py
+pilka/media
+pilka/db.sqlite

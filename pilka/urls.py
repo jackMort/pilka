@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url( r'^admin/', include( admin.site.urls ) ),
+    url( r'^$', 'pilka.views.index', name='index' ),
 )
 
 urlpatterns +=staticfiles_urlpatterns()

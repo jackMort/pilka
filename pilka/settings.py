@@ -142,6 +142,8 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'easy_thumbnails',
     'templatetag_sugar',
+    
+    'pilka.places',
 
 )
 

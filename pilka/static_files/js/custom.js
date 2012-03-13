@@ -510,13 +510,44 @@ jQuery(document).ready(function($) {
     (function() {
 
         var $map = $('#map');
-
         if( $map.length ) {
 
             $map.gMap({
-                address: 'Limanowa, Reymonta 4 34-601 Limanowa',
+                address: 'Limanowa, Polska',
                 mapTypeControl: false,
                 zoom: 10,
+                onComplete: function() {
+                    $.getJSON( '/places/', function( r ) {
+                        for ( var i = 0; i < r.places.length; i++ ) {
+                            var p = r.places[i];
+                            $map.gMap( 'addMarker', {
+                                latitude : p.lat_lng[0],
+                                longitude: p.lat_lng[1],
+                                html     : p.address,
+                                icon: {
+                                    image       : 'http://localhost.pl:8000/static/img/soccer.png',
+                                    shadow      : 'http://localhost.pl:8000/static/img/shadow-soccer.png',
+                                    iconsize    : [32, 37],
+                                    iconanchor  : [16, 18],
+                                    shadowsize  : [51, 37],
+                                    shadowanchor: [16, 18],
+                                }
+                            });
+                        }
+                        //var latlngbounds = new GLatLngBounds();
+                        //for ( var i = 0; i < latlng.length; i++ ) {
+                        //    latlngbounds.extend( latlng[ i ] );
+                        //}
+                        //map.setCenter( latlngbounds.getCenter( ), map.getBoundsZoomLevel( latlngbounds ) );
+                        $map_div = $( '#map > div' ).css( 'display', 'none' )
+                        setTimeout( function() {
+                            $map.slideDown( 1000, function() {
+                                $map.gMap( 'fixAfterResize', true );
+                                $map_div.fadeIn( 5000 );
+                            });
+                        }, 3000 );
+                    });
+                }
             });
 
         }

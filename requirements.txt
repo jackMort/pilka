@@ -8,3 +8,4 @@ django_compressor==0.9.2
 django-debug-toolbar>=0.8.5
 django-templatetag-sugar>=0.1
 django-taggit>=0.9.3
+googlemaps>=1.0.2

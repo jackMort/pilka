@@ -2166,6 +2166,11 @@ input.placeholder, textarea.placeholder { color: #b0b0b0; }
     margin: -41px 0 40px;
     position: relative;
     width: 100%;
+    display: none;
+}
+
+#content.with-map .page-header {
+    border-bottom: 0;
 }
 
 #map:before, #map:after {

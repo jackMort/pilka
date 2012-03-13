@@ -6,8 +6,10 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url( r'^admin/', include( admin.site.urls ) ),
     url( r'^$', 'pilka.views.index', name='index' ),
+
+    url( r'^admin/', include( admin.site.urls ) ),
+    url( r'^places/$', include( 'pilka.places.urls' ) ),
 )
 
 urlpatterns +=staticfiles_urlpatterns()

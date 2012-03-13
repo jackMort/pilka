@@ -525,8 +525,8 @@ jQuery(document).ready(function($) {
                                 longitude: p.lat_lng[1],
                                 html     : p.address,
                                 icon: {
-                                    image       : 'http://localhost.pl:8000/static/img/soccer.png',
-                                    shadow      : 'http://localhost.pl:8000/static/img/shadow-soccer.png',
+                                    image       : 'http://xn--pika-11a.info/static/img/soccer.png',
+                                    shadow      : 'http://xn--pika-11a.info/static/img/shadow-soccer.png',
                                     iconsize    : [32, 37],
                                     iconanchor  : [16, 18],
                                     shadowsize  : [51, 37],
